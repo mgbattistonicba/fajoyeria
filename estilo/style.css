@@ -336,8 +336,6 @@ h2 {
     margin-top: 10px;
 
 }
-
-
 .categ .row .imgmain1 img{
     width: 85%;
     height: 85%;
@@ -357,24 +355,19 @@ h2 {
     padding: 10px;
     grid-area: contactoArea;
 }
-
-
 footer {
     background-color: rgb(247, 225, 197);
 }
-
 .datoscontact {
     margin: 10px;
     padding: 10px;
     grid-area: datosContactoArea;
 }
-
 .atencionclie img {
     width: 40px;
     height: 40px;
     margin-top: 10px;
 }
-
 .gpsFooter {
     margin: 10px;
     padding: 10px;
