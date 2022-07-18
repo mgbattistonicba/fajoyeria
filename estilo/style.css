@@ -11,12 +11,11 @@ body {
 
 .historia {
     background-color: rgb(247, 225, 197);
-    height: 3cm;
     word-spacing: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
 }
 
 
@@ -340,8 +339,8 @@ h2 {
 
 
 .categ .row .imgmain1 img{
-    width: 95%;
-    height: 95%;
+    width: 85%;
+    height: 85%;
     padding: 3%;
     border-radius: 10%;
  }
