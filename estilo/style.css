@@ -309,8 +309,8 @@ h2 {
 }
 
 .video iframe {
-    width: 300px;
-    height: 300px;
+    width: 70%;
+    height: 70%;
     margin-left: 10px;
 }
 
@@ -319,7 +319,7 @@ h2 {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-        "seguidoresArea contactoArea datosContactoArea googleMaps"
+        "seguidoresArea contactoArea datosContactoArea"
 }
 
 
@@ -367,15 +367,6 @@ footer {
     width: 40px;
     height: 40px;
     margin-top: 10px;
-}
-.gpsFooter {
-    margin: 10px;
-    padding: 10px;
-    grid-area: googleMaps;
-}
-.gpsFooter iframe {
-    width: 400px;
-    height: 120px;
 }
 
 @media screen and (max-width: 768px) {
