@@ -11,11 +11,6 @@ body {
 
 .historia {
     background-color: rgb(247, 225, 197);
-    word-spacing: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: end;
 }
 
 
@@ -151,7 +146,7 @@ h2 {
         width: 100%;
       }
       to {
-        margin-left: 0%;
+        margin-left: 5%;
         width: 100%;
       }
 }
@@ -246,7 +241,6 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
 }
 
 .categotriasmain {
@@ -324,17 +318,12 @@ h2 {
 
 
 .seguidores {
-    margin: 10px;
-    padding: 10px;
     grid-area: seguidoresArea;
 }
 
 .seguidores img {
     width: 30px;
     height: 30px;
-    margin-right: 10%;
-    margin-top: 10px;
-
 }
 .categ .row .imgmain1 img{
     width: 85%;
@@ -351,16 +340,12 @@ h2 {
  }
 
 .atencionclie {
-    margin: 10px;
-    padding: 10px;
     grid-area: contactoArea;
 }
 footer {
     background-color: rgb(247, 225, 197);
 }
 .datoscontact {
-    margin: 10px;
-    padding: 10px;
     grid-area: datosContactoArea;
 }
 .atencionclie img {
@@ -383,6 +368,7 @@ footer {
 
 @media screen and (max-width:480) {
 
+    
   
     .datosFooter {
         grid-template-columns: 1fr;
