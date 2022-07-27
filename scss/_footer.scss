@@ -1,12 +1,35 @@
 footer {
     background-color: rgb(247, 225, 197);
 
+    h3 {
+        font-size: 0.5cm;
+    }
+
     .datosFooter {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto;
         grid-template-areas:
             "seguidoresArea contactoArea datosContactoArea";
+
+        @media screen and (max-width: 768px) {
+
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas:
+                "seguidoresArea contactoArea"
+                "datosContactoArea"
+        }
+
+        @media screen and (max-width:480px) {
+
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "seguidoresArea"
+                    "contactoArea"
+                    "datosContactoArea"
+        }
 
         .seguidores {
             margin: 10px;
@@ -34,13 +57,17 @@ footer {
                 margin-top: 10px;
             }
         }
-        
+
         .datoscontact {
             margin-top: 10px;
             padding: 10px;
             grid-area: datosContactoArea;
         }
-        
+
+
 
     }
+
+
+
 }
