@@ -1,0 +1,331 @@
+
+
+
+
+/* main*/
+.mainjoyas {
+    min-height: 70vh;
+
+}
+
+.maininsumos {
+    min-height: 60vh;
+}
+.imginsumos img {
+    margin: 10px;
+    padding: 15px;
+    width: 400px;
+    height: 400px;
+}
+
+.maincontacto {
+    margin-bottom: 3rem;
+    min-height: 30vh;
+}
+
+.mainosotros {
+    min-height: 50vh;
+}
+
+
+/*main*/
+h1 {
+    color: black;
+    flex-direction: row;
+    text-align: center;
+    font-size: 1.5cm;
+}
+h3 {
+    font-size: 0.5cm;
+}
+
+.row {
+    display: flex;
+    margin-top: 30px;
+    width:100%
+}
+
+.categ a {
+    color: rgb(0, 1, 7);
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.categ img {
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+    margin-top: 40px;
+}
+
+.categ img:hover {
+    transform: scale(1.03);
+    transition-property: all;
+    transition-duration: 1s;
+    align-items: center;
+}
+
+.ingresoanillo {
+    text-decoration: none;
+    justify-content: center;
+    color: black;
+}
+
+h1 {
+    animation-duration: 4s;
+    animation-name: titulo;
+    margin: 20px;
+}
+
+
+h2 {
+    animation-duration: 4s;
+    animation-name: titulo;
+    margin: 20px;
+}
+
+.accesoAnillos{
+    display: flex;
+    justify-content: center;
+    font-size: 0.7cm;
+}
+
+.accesoCadenas{
+    display: flex;
+    justify-content: center;
+    font-size: 0.7cm;
+
+}
+
+.accesoAros{
+    display: flex;
+    justify-content: center;
+    font-size: 0.7cm;
+}
+
+.accesoDijes{
+    display: flex;
+    justify-content: center;
+    font-size: 0.7cm;
+}
+
+
+@keyframes titulo{
+
+    from {
+        margin-left: 100%;
+        width: 100%;
+      }
+      to {
+        margin-left: 5%;
+        width: 100%;
+      }
+}
+
+
+
+h2 {
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 40px;
+    font-size: 1.5cm;
+}
+
+.video {
+    margin: 20px 50px 50px 110px;
+}
+
+.ningresos {
+    display: grid;
+
+}
+
+.ningresos img {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 15px;
+}
+
+
+.atcl img {
+    width: 50px;
+    height: 50px;
+    margin: 0.3cm;
+}
+
+.datcont img {
+    width: 50px;
+    height: 50px;
+    margin: 0.3cm;
+}
+
+.productos {
+    height: 3cm;
+    word-spacing: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.productos img {
+    width: 30px;
+    height: 30px;
+}
+
+
+.loqhay {
+    height: 3cm;
+    word-spacing: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.loqhay img {
+    width: 30px;
+    height: 30px;
+}
+
+.quiensta img {
+    width: 30px;
+    height: 30px;
+}
+
+
+.quiensta {
+    height: 3cm;
+    word-spacing: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.histo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.categotriasmain {
+    grid-area: categoriasMainArea;
+}
+
+
+
+.anilloimg {
+    grid-area: anilloImgArea;
+}
+
+.nav-link{
+    font-size: 0.6cm;
+}
+.arosimg {
+    grid-area: arosImgArea;
+}
+
+.cadenaimg {
+    grid-area: cadenaImgArea;
+}
+
+.dijesimg {
+    grid-area: dijesImgArea;
+
+}
+
+
+.img1 {
+    grid-area: img1Area;
+}
+
+.img2 {
+    grid-area: img2Area;
+}
+
+.img3 {
+    grid-area: img3Area;
+}
+
+.img4 {
+    grid-area: img4Area;
+}
+
+.img5 {
+    grid-area: img5Area;
+}
+
+.img6 {
+    grid-area: img6Area;
+}
+
+.img7 {
+    grid-area: img7Area;
+}
+
+.img8 {
+    grid-area: img8Area;
+}
+
+.video iframe {
+    width: 70%;
+    height: 70%;
+    margin-left: 10px;
+}
+
+.categ .row .imgmain1 img{
+    width: 85%;
+    height: 85%;
+    padding: 3%;
+    border-radius: 10%;
+ }
+
+ .nuevosingresos .row .imgmain1 img{
+    width: 95%;
+    height: 95%;
+    padding: 3%;
+    border-radius: 10%;
+ }
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    
+ 
+    .datosFooter {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "seguidoresArea contactoArea"
+            "datosContactoArea"
+    }
+}
+
+@media screen and (max-width:480px) {
+
+
+  
+
+
+    .datosFooter {
+
+       
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "seguidoresArea"
+            "contactoArea"
+            "datosContactoArea"
+    }
+
+   
+
+
+}
