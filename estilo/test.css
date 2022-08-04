@@ -41,14 +41,6 @@ h3 {
 }
 
 
-
-
-
-
-.video {
-    margin: 20px 50px 50px 110px;
-}
-
 .ningresos {
     display: grid;
 
@@ -116,15 +108,6 @@ h3 {
     justify-content: center;
     align-items: center;
 }
-
-.histo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-}
-
-
 
 
 .anilloimg {
