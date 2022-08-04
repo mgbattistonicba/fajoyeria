@@ -1,64 +1,99 @@
 * {
   padding: 0%;
-  margin: 0%; }
-  * body {
-    background-size: cover;
-    background-repeat: no-repeat; }
-    * body .historia {
-      background-color: #f7e1c5; }
-      * body .historia nav img {
-        width: 200px;
-        height: 110px; }
-      * body .historia nav ul li {
-        display: inline-flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center; }
-        * body .historia nav ul li a {
-          text-decoration: none;
-          color: black;
-          margin: 0.7cm; }
+  margin: 0%;
+}
+
+* body {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+* body .historia {
+  background-color: #f7e1c5;
+}
+
+* body .historia nav img {
+  width: 200px;
+  height: 110px;
+}
+
+* body .historia nav ul li {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+* body .historia nav ul li a {
+  text-decoration: none;
+  color: black;
+  margin: 0.7cm;
+}
 
 footer {
-  background-color: #f7e1c5; }
-  footer h3 {
-    font-size: 0.5cm; }
+  background-color: #f7e1c5;
+}
+
+footer h3 {
+  font-size: 0.5cm;
+}
+
+footer .datosFooter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "seguidoresArea contactoArea datosContactoArea";
+}
+
+@media screen and (max-width: 768px) {
   footer .datosFooter {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "seguidoresArea contactoArea"
+      "datosContactoArea";
+  }
+}
+
+@media screen and (max-width: 480px) {
+  footer .datosFooter {
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "seguidoresArea contactoArea datosContactoArea"; }
-    @media screen and (max-width: 768px) {
-      footer .datosFooter {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas: "seguidoresArea contactoArea" "datosContactoArea"; } }
-    @media screen and (max-width: 480px) {
-      footer .datosFooter {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-template-areas: "seguidoresArea" "contactoArea" "datosContactoArea"; } }
-    footer .datosFooter .seguidores {
-      margin: 10px;
-      padding: 10px;
-      grid-area: seguidoresArea; }
-      footer .datosFooter .seguidores img {
-        width: 30px;
-        height: 30px;
-        margin-right: 10%;
-        margin-top: 10px; }
-    footer .datosFooter .atencionclie {
-      margin: 10px;
-      padding: 10px;
-      grid-area: contactoArea; }
-      footer .datosFooter .atencionclie img {
-        width: 40px;
-        height: 40px;
-        margin-top: 10px; }
-    footer .datosFooter .datoscontact {
-      margin-top: 10px;
-      padding: 10px;
-      grid-area: datosContactoArea; }
+    grid-template-areas: "seguidoresArea"
+      "contactoArea"
+      "datosContactoArea";
+  }
+}
+
+footer .datosFooter .seguidores {
+  margin: 10px;
+  padding: 10px;
+  grid-area: seguidoresArea;
+}
+
+footer .datosFooter .seguidores img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10%;
+  margin-top: 10px;
+}
+
+footer .datosFooter .atencionclie {
+  margin: 10px;
+  padding: 10px;
+  grid-area: contactoArea;
+}
+
+footer .datosFooter .atencionclie img {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+footer .datosFooter .datoscontact {
+  margin-top: 10px;
+  padding: 10px;
+  grid-area: datosContactoArea;
+}
 
 h1 {
   color: black;
@@ -67,71 +102,94 @@ h1 {
   font-size: 1.5cm;
   animation-duration: 4s;
   animation-name: titulo;
-  margin: 20px; }
+  margin: 20px;
+}
 
 .categotriasmain {
-  grid-area: categoriasMainArea; }
+  grid-area: categoriasMainArea;
+}
 
 @keyframes titulo {
   from {
     margin-left: 100%;
-    width: 100%; }
+    width: 100%;
+  }
+
   to {
     margin-left: 5%;
-    width: 100%; } }
+    width: 100%;
+  }
+}
 
 .categ .row {
   display: flex;
   margin-top: 30px;
-  width: 100%; }
-  .categ .row .imgmain1 img {
-    width: 85%;
-    height: 85%;
-    padding: 3%;
-    border-radius: 10%; }
-  .categ .row img {
-    width: 400px;
-    height: 400px;
-    margin: 10px;
-    margin-top: 40px; }
-    .categ .row img :hover {
-      transform: scale(1.03);
-      transition-property: all;
-      transition-duration: 1s;
-      align-items: center; }
-  .categ .row a {
-    color: #000107;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center; }
-  .categ .row .accesoAnillos {
-    display: flex;
-    justify-content: center;
-    font-size: 0.7cm; }
-  .categ .row .accesoCadenas {
-    display: flex;
-    justify-content: center;
-    font-size: 0.7cm; }
-  .categ .row .accesoAros {
-    display: flex;
-    justify-content: center;
-    font-size: 0.7cm; }
-  .categ .row .accesoDijes {
-    display: flex;
-    justify-content: center;
-    font-size: 0.7cm; }
+  width: 100%;
+}
+
+.categ .row .imgmain1 img {
+  width: 85%;
+  height: 85%;
+  padding: 3%;
+  border-radius: 10%;
+}
+
+.categ .row img {
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+  margin-top: 40px;
+}
+
+.categ .row img :hover {
+  transform: scale(1.03);
+  transition-property: all;
+  transition-duration: 1s;
+  align-items: center;
+}
+
+.categ .row a {
+  color: #000107;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.categ .row .accesoAnillos {
+  display: flex;
+  justify-content: center;
+  font-size: 0.7cm;
+}
+
+.categ .row .accesoCadenas {
+  display: flex;
+  justify-content: center;
+  font-size: 0.7cm;
+}
+
+.categ .row .accesoAros {
+  display: flex;
+  justify-content: center;
+  font-size: 0.7cm;
+}
+
+.categ .row .accesoDijes {
+  display: flex;
+  justify-content: center;
+  font-size: 0.7cm;
+}
 
 .nuevosingresos h2 {
   text-align: center;
-  margin-top: 90px;
-  margin-bottom: 40px;
   font-size: 1.5cm;
   animation-duration: 4s;
   animation-name: titulo;
-  margin: 20px; }
+  margin: 20px;
+}
 
 .nuevosingresos .row .imgmain1 img {
   width: 95%;
   height: 95%;
   padding: 3%;
-  border-radius: 10%; }
+  border-radius: 10%;
+}
