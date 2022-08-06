@@ -1,35 +1,5 @@
 
 
-
-
-/* main*/
-.mainjoyas {
-    min-height: 70vh;
-
-}
-
-.maininsumos {
-    min-height: 60vh;
-}
-.imginsumos img {
-    margin: 10px;
-    padding: 15px;
-    width: 400px;
-    height: 400px;
-}
-
-.maincontacto {
-    margin-bottom: 3rem;
-    min-height: 30vh;
-}
-
-.mainosotros {
-    min-height: 50vh;
-}
-
-
-/*main*/
-
 h3 {
     font-size: 0.5cm;
 }
