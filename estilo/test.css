@@ -133,8 +133,3 @@ h3 {
     grid-area: img8Area;
 }
 
-.video iframe {
-    width: 70%;
-    height: 70%;
-    margin-left: 10px;
-}
