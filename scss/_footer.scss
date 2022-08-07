@@ -1,5 +1,10 @@
+@import "_mixin";
+@import "_variables";
+@import "_map";
+
+
 footer {
-    background: linear-gradient(#96caf5, #1d2570);
+    background: linear-gradient( #96caf5, #1d2570);
 
     h3 {
         font-size: 0.5cm;
@@ -41,7 +46,6 @@ footer {
                 height: 30px;
                 margin-right: 10%;
                 margin-top: 10px;
-
             }
 
         }
