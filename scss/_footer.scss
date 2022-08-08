@@ -7,6 +7,10 @@ footer {
     /* defino gradiente de footer*/
     background: linear-gradient($color1Footer, $color2Footer);
 
+    a {
+        text-decoration: none;
+    }
+
     /* utilizamos variable para definir tamaño h3*/
     h3 {
         font-size: $fontsizeh3footer;

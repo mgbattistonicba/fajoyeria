@@ -25,6 +25,8 @@ footer {
   /* defino gradiente de footer*/
   background: linear-gradient(#96caf5, #1d2570);
   /* utilizamos variable para definir tamaño h3*/ }
+  footer a {
+    text-decoration: none; }
   footer h3 {
     font-size: 0.5cm; }
   footer .datosFooter {
@@ -157,8 +159,6 @@ main {
   min-height: 60vh;
   background-image: url(../img/5a2f1e0c50c4f38a6f5029eb76d8c71a.jpg); }
   .maininsumos .nuevosingresos .video iframe {
-    width: 70%;
-    height: 70%;
     margin-left: 10px;
     margin-bottom: 70px; }
 
@@ -168,7 +168,8 @@ main {
 
 .mainosotros {
   display: flex;
-  min-height: 50vh; }
+  min-height: 50vh;
+  background-image: url(../img/fotolocalmovile.jpg); }
   .mainosotros .histo {
     align-items: center;
     justify-content: center; }
@@ -179,10 +180,11 @@ main {
       color: #0f0d8b; }
       @media screen and (max-width: 468px) {
         .mainosotros .histo h3 {
-          font-size: 20px; } }
+          font-size: 25px;
+          color: #050202; } }
     .mainosotros .histo p {
       text-align: center;
-      font-size: 20px;
+      font-size: 30px;
       font-weight: 900px;
       font-family: 'Times New Roman', Times, serif;
       margin-left: 1%;
@@ -192,6 +194,7 @@ main {
       color: black; }
       @media screen and (max-width: 468px) {
         .mainosotros .histo p {
-          font-size: 15px; } }
+          font-size: 17px;
+          color: #02030e; } }
 
 /*este se utiliza en el footer con la class datos footer*/
