@@ -168,14 +168,10 @@ main {
 
 .mainosotros {
   display: flex;
-  min-height: 50vh;
-  background-image: url(../img/5a2f1e0c50c4f38a6f5029eb76d8c71a.jpg); }
+  min-height: 50vh; }
   .mainosotros .histo {
     align-items: center;
     justify-content: center; }
-    @media screen and (max-width: 468px) {
-      .mainosotros .histo {
-        background-image: url(../img/fotolocalmovile.jpg); } }
     .mainosotros .histo h3 {
       text-align: center;
       font-size: 40px;
