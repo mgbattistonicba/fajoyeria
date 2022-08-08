@@ -4,16 +4,19 @@
 
 
 footer {
-    background: linear-gradient( #96caf5, #1d2570);
+    /* defino gradiente de footer*/
+    background: linear-gradient($color1Footer, $color2Footer);
 
+    /* utilizamos variable para definir tamaño h3*/
     h3 {
-        font-size: 0.5cm;
+        font-size: $fontsizeh3footer;
     }
-    
+
     .datosFooter {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto;
+        /*se utiliza map pra obtener la cantidad de columnas del grid*/
+        grid-template-columns: map-get($mapdatosFooter, columnsdatosFooter);
+        grid-template-rows: map-get($mapdatosfooterrows, rowsdatosfooter);
         grid-template-areas:
             "seguidoresArea contactoArea datosContactoArea";
 
@@ -28,18 +31,18 @@ footer {
 
         @media screen and (max-width:480px) {
 
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-                grid-template-areas:
-                    "seguidoresArea"
-                    "contactoArea"
-                    "datosContactoArea"
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "seguidoresArea"
+                "contactoArea"
+                "datosContactoArea"
         }
 
         .seguidores {
-            margin: 10px;
-            padding: 10px;
-            grid-area: seguidoresArea;
+
+            /*se utiliza mixin para darle margin, padding y grid-area al footer*/
+            @include footerseguidores(10px, 10px, seguidoresArea);
 
             img {
                 width: 30px;

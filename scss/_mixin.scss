@@ -1,0 +1,5 @@
+@mixin footerseguidores($margin, $padding, $grid-area) {
+    margin: $margin;
+    padding: $padding;
+    grid-area: $grid-area;
+}

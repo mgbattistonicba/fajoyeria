@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header {
   padding: 0%;
   margin: 0%;
@@ -19,13 +20,17 @@ header {
         color: black;
         margin: 0.7cm; }
 
+/*este se utiliza en el footer con la class datos footer*/
 footer {
-  background: linear-gradient(#96caf5, #1d2570); }
+  /* defino gradiente de footer*/
+  background: linear-gradient(#96caf5, #1d2570);
+  /* utilizamos variable para definir tamaño h3*/ }
   footer h3 {
     font-size: 0.5cm; }
   footer .datosFooter {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /*se utiliza map pra obtener la cantidad de columnas del grid*/
+    grid-template-columns: repeat(1fr, 1fr, 1fr);
     grid-template-rows: auto;
     grid-template-areas: "seguidoresArea contactoArea datosContactoArea"; }
     @media screen and (max-width: 768px) {
@@ -39,6 +44,7 @@ footer {
         grid-template-rows: auto;
         grid-template-areas: "seguidoresArea" "contactoArea" "datosContactoArea"; } }
     footer .datosFooter .seguidores {
+      /*se utiliza mixin para darle margin, padding y grid-area al footer*/
       margin: 10px;
       padding: 10px;
       grid-area: seguidoresArea; }
@@ -191,3 +197,5 @@ main {
       @media screen and (max-width: 468px) {
         .mainosotros .histo p {
           font-size: 15px; } }
+
+/*este se utiliza en el footer con la class datos footer*/
