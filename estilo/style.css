@@ -40,15 +40,12 @@ footer {
       footer .datosFooter {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-        grid-template-areas: "seguidoresArea contactoArea"
- "datosContactoArea"; } }
+        grid-template-areas: "seguidoresArea contactoArea" "datosContactoArea"; } }
     @media screen and (max-width: 480px) {
       footer .datosFooter {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas: "seguidoresArea"
- "contactoArea"
- "datosContactoArea"; } }
+        grid-template-areas: "seguidoresArea" "contactoArea" "datosContactoArea"; } }
     footer .datosFooter .seguidores {
       /*se utiliza mixin para darle margin, padding y grid-area al footer*/
       margin: 10px;
