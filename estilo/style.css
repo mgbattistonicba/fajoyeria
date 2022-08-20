@@ -4,8 +4,7 @@ header {
   margin: 0%;
   background: linear-gradient(#96caf5, #1d2570);
   list-style: none;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 25px; }
+  font-family: 'Times New Roman', Times, serif; }
   header body {
     background-size: cover;
     background-repeat: no-repeat; }
@@ -40,15 +39,12 @@ footer {
       footer .datosFooter {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-        grid-template-areas: "seguidoresArea contactoArea"
- "datosContactoArea"; } }
+        grid-template-areas: "seguidoresArea contactoArea" "datosContactoArea"; } }
     @media screen and (max-width: 480px) {
       footer .datosFooter {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas: "seguidoresArea"
- "contactoArea"
- "datosContactoArea"; } }
+        grid-template-areas: "seguidoresArea" "contactoArea" "datosContactoArea"; } }
     footer .datosFooter .seguidores {
       /*se utiliza mixin para darle margin, padding y grid-area al footer*/
       margin: 10px;
@@ -82,7 +78,7 @@ h1 {
   color: black;
   flex-direction: row;
   text-align: center;
-  font-size: 1.2cm;
+  font-size: 1.5cm;
   animation-duration: 4s;
   animation-name: titulo; }
 
@@ -139,9 +135,9 @@ h1 {
 
 .nuevosingresos h2 {
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  font-size: 1.2cm;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  font-size: 1.5cm;
   animation-duration: 4s;
   animation-name: titulo; }
 
@@ -156,7 +152,8 @@ h1 {
 main {
   margin: 0%;
   padding: 0%;
-  min-height: 70vh; }
+  min-height: 70vh;
+  background-image: url(../img/5a2f1e0c50c4f38a6f5029eb76d8c71a.jpg); }
 
 .maininsumos {
   min-height: 60vh;
