@@ -74,9 +74,10 @@ let precioTotalArosyAbridores = cantidadProductoArosyAbridores * precioArosyabri
 
 let precioTotal = precioTotalCadena + precioTotalDijes + precioTotalAnillos + precioTotalArosyAbridores
 
-alert("E precio total de su compra es:" + precioTotal)
+alert("El precio total de su compra es:" + precioTotal)
 
 console.log(precioTotal)
+
 
 
 
