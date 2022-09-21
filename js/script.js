@@ -83,7 +83,3 @@ alert("El precio total de su compra es:" + precioTotal)
 console.log("El precio total de la compra es:" + precioTotal)
 
 
-// if -- 
-
-if(precioTotal){}
-
