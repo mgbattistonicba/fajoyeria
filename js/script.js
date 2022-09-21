@@ -65,19 +65,25 @@ alert("Acepte si quiere comprar" + " " + productoArosyAbridores)
 let cantidadProductoArosyAbridores = prompt("Ingrese que cantidad de" + " " + productoArosyAbridores + " " + "desea comprar")
 
 let precioTotalCadena = cantidadProductoCadena * precioCadena
+console.log("El precio de la cadena es:" + " " + precioTotalCadena)
 
 let precioTotalDijes = cantidadProductoDije * precioDijes
+console.log("El precio del dije es:" + " " + precioTotalDijes)
 
 let precioTotalAnillos = cantidadProductoAnillo * precioAnillos
+console.log("El precio del anillo es:" + " " + precioTotalAnillos)
 
 let precioTotalArosyAbridores = cantidadProductoArosyAbridores * precioArosyabridores
+console.log("El precio de los aros y abridores es:" + " " + precioTotalArosyAbridores)
 
 let precioTotal = precioTotalCadena + precioTotalDijes + precioTotalAnillos + precioTotalArosyAbridores
 
 alert("El precio total de su compra es:" + precioTotal)
 
-console.log(precioTotal)
+console.log("El precio total de la compra es:" + precioTotal)
 
 
+// if -- 
 
+if(precioTotal){}
 
