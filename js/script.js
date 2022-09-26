@@ -1,9 +1,5 @@
 // este es el archivo JS
-/* 
-3 palabras claves para crear variables
-var -- no se usa mas
-let -- 
-const -- "constante" */
+
 
 let productoCadena
 let stockCadenas
