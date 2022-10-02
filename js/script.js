@@ -5,7 +5,7 @@ let productoCadena
 let stockCadenas
 let precioCadena
 productoCadena = "Cadenas"
-stockCadenas = 150
+stockCadenas = 10
 precioCadena = 2980
 
 let productoDije
@@ -25,7 +25,7 @@ precioAnillos = 4320
 let productoArosyAbridores
 let stockArosyAbridores
 let precioArosyabridores
-productoArosyAbridores ="Aros y Abridores"
+productoArosyAbridores = "Aros y Abridores"
 stockArosyAbridores = 175
 precioArosyabridores = 2870
 
@@ -44,38 +44,118 @@ precioArosyabridores = 2870
 //mostrar los productos - compra?
 // cantidad - precio total de la compra
 
-alert("Acepte si quiere comprar" + " " + productoCadena)
+//let compra = prompt("Ingrese SI si quiere comprar")
 
-let cantidadProductoCadena = prompt("Ingrese que cantidad de"+ " " + productoCadena + " "+ "desea comprar")
+//if(compra == "SI"){
 
-alert("Acepte si quiere comprar" + " " + productoDije)
+let precioTotal = 0
 
-let cantidadProductoDije = prompt("Ingrese que cantidad de" + " " + productoDije + " " + "desea comprar")
 
-alert("Acepte si quiere comprar" + " " + productoAnillo)
 
-let cantidadProductoAnillo = prompt("Ingrese que cantidad de" + " " + productoAnillo + " " + "desea comprar")
+// funcion flecha , saca el precio total y verifica si corresponde descuento 
+precioTotalFuncion = (cantidad, precio) => {
 
-alert("Acepte si quiere comprar" + " " + productoArosyAbridores)
+    precioTotal = cantidad * precio;
 
-let cantidadProductoArosyAbridores = prompt("Ingrese que cantidad de" + " " + productoArosyAbridores + " " + "desea comprar")
+    if (precioTotal >= 15000) { precioTotal = precioTotal / 1.10; }
 
-let precioTotalCadena = cantidadProductoCadena * precioCadena
-console.log("El precio de la cadena es:" + " " + precioTotalCadena)
+}
 
-let precioTotalDijes = cantidadProductoDije * precioDijes
-console.log("El precio del dije es:" + " " + precioTotalDijes)
 
-let precioTotalAnillos = cantidadProductoAnillo * precioAnillos
-console.log("El precio del anillo es:" + " " + precioTotalAnillos)
+// funcion ,
+function noStock(stock) {
 
-let precioTotalArosyAbridores = cantidadProductoArosyAbridores * precioArosyabridores
-console.log("El precio de los aros y abridores es:" + " " + precioTotalArosyAbridores)
+    alert("Actualmente tenemos " + stock + " unidades disponibles de este producto")
+}
 
-let precioTotal = precioTotalCadena + precioTotalDijes + precioTotalAnillos + precioTotalArosyAbridores
 
-alert("El precio total de su compra es:" + precioTotal)
 
-console.log("El precio total de la compra es:" + precioTotal)
 
+
+let productoCompra = prompt("Ingrese el producto que quiere comprar: \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros y Abridores")
+
+
+if (productoCompra.toLowerCase() == "1") {
+    let cantidadProductoCadena = prompt("Ingrese que cantidad de" + " " + productoCadena + " " + "desea comprar")
+    if (cantidadProductoCadena <= stockCadenas) {
+
+
+        precioTotalFuncion(cantidadProductoCadena, precioCadena);
+    }
+
+    else {
+
+
+        noStock(stockCadenas);
+    }
+}
+
+
+else
+    if (productoCompra.toLowerCase() == "2") {
+        let cantidadProductoDije = prompt("Ingrese que cantidad de" + " " + productoDije + " " + "desea comprar")
+        if (cantidadProductoDije <= stockDijes) {
+
+            precioTotalFuncion(cantidadProductoDije, precioDijes);
+        }
+        else {
+
+            noStock(stockDijes);
+        }
+    }
+
+
+    else if (productoCompra.toLowerCase() == "3") {
+        let cantidadProductoAnillo = prompt("Ingrese que cantidad de" + " " + productoAnillo + " " + "desea comprar")
+        if (cantidadProductoAnillo <= stockAnillos) {
+
+
+            precioTotalFuncion(cantidadProductoAnillo, precioAnillos);
+        }
+        else {
+
+
+            noStock(stockAnillos);
+        }
+    }
+
+
+    else if (productoCompra.toLowerCase() == "4") {
+        let cantidadProductoArosyAbridores = prompt("Ingrese que cantidad de" + " " + C + " " + "desea comprar")
+        if (cantidadProductoArosyAbridores <= stockArosyAbridores) {
+
+            //  usamos funcion 
+            precioTotalFuncion(cantidadProductoArosyAbridores, precioArosyabridores);
+        }
+        else {
+
+
+            noStock(stockArosyAbridores);
+        }
+    }
+    else {
+        alert("No tenemos ese producto a la venta")
+    }
+
+
+
+if (precioTotal != 0) {
+    alert("El precio total de su compra es: $" + precioTotal)
+
+    let texto = prompt("Desea seguir con la compra");
+
+
+}
+
+
+
+
+if (texto == "SI") {
+
+    alert("Seguir la compra")
+
+}
+else {
+    alert("Gracias por su visita")
+}
 
