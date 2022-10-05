@@ -1,33 +1,28 @@
 // este es el archivo JS
 
+let productoCadena = {
+    nombre: "cadenas",
+    stock: 200,
+    precio: 2000
+}
 
-let productoCadena
-let stockCadenas
-let precioCadena
-productoCadena = "Cadenas"
-stockCadenas = 200
-precioCadena = 2000
+let productoDije = {
+    nombre: "dijes",
+    stock: 180,
+    precio: 3000
+}
 
-let productoDije
-let stockDijes
-let precioDijes
-productoDije = "dijes"
-stockDijes = 180
-precioDijes = 3000
+let productoAnillo = {
+    nombre: "anillos",
+    stock: 290,
+    precio: 4000
+}
 
-let productoAnillo
-let stockAnillos
-let precioAnillos
-productoAnillo = "anillos"
-stockAnillos = 290
-precioAnillos = 4000
-
-let productoArosyAbridores
-let stockArosyAbridores
-let precioArosyabridores
-productoArosyAbridores = "Aros y Abridores"
-stockArosyAbridores = 175
-precioArosyabridores = 1000
+let productoArosyAbridores = {
+    nombre: "aros y abridores",
+    stock: 175,
+    precio: 1000
+}
 
 
 let precioTotal = 0
@@ -42,63 +37,43 @@ function precioTotalFuncion(cantidad, precio){
 }
 
 // funcion, verifica el stock
-function noStock(stock) {
+function noStock(cantidad, _stock, precio) {
 
-    alert("Actualmente tenemos " + stock + " unidades disponibles de este producto")
+    if(cantidad, precio){
+        precioTotalFuncion(cantidad, precio)
+    }
+
+    //alert("Actualmente tenemos " + stock + " unidades disponibles de este producto")
 }
+
+//Mensaje de bienvenida
+alert("Bienvenido a su joyeria de confianza")
 
 let cantidadCompra = parseInt(prompt("Que cantidad de productos distintos quiere comprar:"))
 
 for(let i = 0; i < cantidadCompra; i = i + 1){
 
-let productoCompra = prompt("Ingrese el producto que quiere comprar: \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros y Abridores")
+    let productoCompra = prompt("Ingrese el producto que quiere comprar: \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros y Abridores")
 
 if (productoCompra.toLowerCase() == "1") {
-    let cantidadProductoCadena = prompt("Ingrese que cantidad de" + " " + productoCadena + " " + "desea comprar")
-    if (cantidadProductoCadena <= stockCadenas) {
-
-        precioTotalFuncion(cantidadProductoCadena, precioCadena);
-    }
-
-    else {
-        noStock(stockCadenas);
-        }
+    let cantidadProductoCadena = prompt("Ingrese que cantidad de" + " " + productoCadena.nombre + " " + "desea comprar")
+    noStock(cantidadProductoCadena, productoCadena.stock, productoCadena.precio)
     }
 
     else if (productoCompra.toLowerCase() == "2") {
-        let cantidadProductoDije = prompt("Ingrese que cantidad de" + " " + productoDije + " " + "desea comprar")
-        if (cantidadProductoDije <= stockDijes) {
-
-            precioTotalFuncion(cantidadProductoDije, precioDijes);
-        }
-        else {
-
-            noStock(stockDijes);
-        }
+        let cantidadProductoDije = prompt("Ingrese que cantidad de" + " " + productoDije.nombre + " " + "desea comprar")
+        noStock(cantidadProductoDije, productoDije.stock, productoDije.precio)
     }
 
     else if (productoCompra.toLowerCase() == "3") {
-        let cantidadProductoAnillo = prompt("Ingrese que cantidad de" + " " + productoAnillo + " " + "desea comprar")
-        if (cantidadProductoAnillo <= stockAnillos) {
-            
-            precioTotalFuncion(cantidadProductoAnillo, precioAnillos);
-        }
-
-        else {
-            noStock(stockAnillos);
-        }
+        let cantidadProductoAnillo = prompt("Ingrese que cantidad de" + " " + productoAnillo.nombre + " " + "desea comprar")
+        noStock(cantidadProductoAnillo, productoAnillo.stock, productoAnillo.precio)
     }
 
     else if (productoCompra.toLowerCase() == "4") {
-        let cantidadProductoArosyAbridores = prompt("Ingrese que cantidad de" + " " + productoArosyAbridores + " " + "desea comprar")
-        if (cantidadProductoArosyAbridores <= stockArosyAbridores) {
+        let cantidadProductoArosyAbridores = prompt("Ingrese que cantidad de" + " " + productoArosyAbridores.nombre + " " + "desea comprar")
+        noStock (cantidadProductoArosyAbridores, productoArosyAbridores.stock, productoArosyAbridores.precio)
 
-            //  usamos funcion 
-            precioTotalFuncion(cantidadProductoArosyAbridores, precioArosyabridores);
-        }
-        else {
-            noStock(stockArosyAbridores);
-        }
     }
     else {
         alert("No tenemos ese producto a la venta")
@@ -108,13 +83,10 @@ if (productoCompra.toLowerCase() == "1") {
 
 if (precioTotal != 0) {
     alert("El precio total de su compra es: $" + precioTotal)
-
-}
-
-if (texto == "SI") {
-    alert("Seguir la compra")
 }
 
 else {
     alert("Gracias por su visita")
 }
+
+
