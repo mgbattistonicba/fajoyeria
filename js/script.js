@@ -1,27 +1,39 @@
 // este es el archivo JS
 
-let productoCadena = {
-    nombre: "cadenas",
-    stock: 200,
-    precio: 2000
+
+function producto(nombre, precio, stock){
+    this.nombre = nombre;
+    this.precio = precio;
+    this.stock = stock;
+    this.restarstock = function(cantidad){
+        this.stock -= cantidad
+    }
 }
 
-let productoDije = {
-    nombre: "dijes",
-    stock: 180,
-    precio: 3000
+let productoCadena = new producto("cadena", 2000, 200)
+let productoDije = new producto("dije", 3000, 180)
+let productoAnillo = new producto("anillo", 4000, 290)
+let productoArosyAbridores = new producto("aros y abridores", 1000, 175)
+
+
+for(const propiedad in productoCadena){
+
+    console.log(productoCadena[propiedad])
 }
 
-let productoAnillo = {
-    nombre: "anillos",
-    stock: 290,
-    precio: 4000
+for(const propiedad1 in productoDije){
+
+    console.log(productoDije[propiedad1])
 }
 
-let productoArosyAbridores = {
-    nombre: "aros y abridores",
-    stock: 175,
-    precio: 1000
+for(const propiedad2 in productoAnillo){
+
+    console.log(productoAnillo[propiedad2])
+}
+
+for(const propiedad3 in productoArosyAbridores){
+
+    console.log(productoArosyAbridores[propiedad3])
 }
 
 
@@ -58,22 +70,25 @@ for(let i = 0; i < cantidadCompra; i = i + 1){
 if (productoCompra.toLowerCase() == "1") {
     let cantidadProductoCadena = prompt("Ingrese que cantidad de" + " " + productoCadena.nombre + " " + "desea comprar")
     noStock(cantidadProductoCadena, productoCadena.stock, productoCadena.precio)
+    productoCadena.restarstock(cantidadProductoCadena)
     }
 
     else if (productoCompra.toLowerCase() == "2") {
         let cantidadProductoDije = prompt("Ingrese que cantidad de" + " " + productoDije.nombre + " " + "desea comprar")
         noStock(cantidadProductoDije, productoDije.stock, productoDije.precio)
+        productoDije.restarstock(cantidadProductoDije)
     }
 
     else if (productoCompra.toLowerCase() == "3") {
         let cantidadProductoAnillo = prompt("Ingrese que cantidad de" + " " + productoAnillo.nombre + " " + "desea comprar")
         noStock(cantidadProductoAnillo, productoAnillo.stock, productoAnillo.precio)
+        productoAnillo.restarstock(cantidadProductoAnillo)
     }
 
     else if (productoCompra.toLowerCase() == "4") {
         let cantidadProductoArosyAbridores = prompt("Ingrese que cantidad de" + " " + productoArosyAbridores.nombre + " " + "desea comprar")
         noStock (cantidadProductoArosyAbridores, productoArosyAbridores.stock, productoArosyAbridores.precio)
-
+        productoArosyAbridores.restarstock(cantidadProductoArosyAbridores)
     }
     else {
         alert("No tenemos ese producto a la venta")
