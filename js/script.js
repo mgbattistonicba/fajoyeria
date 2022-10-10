@@ -4,7 +4,7 @@
 function producto(nombre, precio, stock){
     this.nombre = nombre;
     this.precio = precio;
-    this.stock = stock;
+    this.stock = stock || 0;
     this.restarstock = function(cantidad){
         this.stock -= cantidad
     }
@@ -14,6 +14,17 @@ let productoCadena = new producto("cadena", 2000, 200)
 let productoDije = new producto("dije", 3000, 180)
 let productoAnillo = new producto("anillo", 4000, 290)
 let productoArosyAbridores = new producto("aros y abridores", 1000, 175)
+
+
+let listaProductos = [productoCadena, productoDije, productoAnillo, productoArosyAbridores]
+
+let listaNombres = []
+
+for(const prod of listaProductos){
+    if(prod.stock >= 0){
+    listaNombres.push(prod.nombre)
+    }
+}
 
 
 for(const propiedad in productoCadena){
@@ -65,7 +76,9 @@ let cantidadCompra = parseInt(prompt("Que cantidad de productos distintos quiere
 
 for(let i = 0; i < cantidadCompra; i = i + 1){
 
-    let productoCompra = prompt("Ingrese el producto que quiere comprar: \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros y Abridores")
+    let productoCompra = prompt("Ingrese el producto que quiere comprar: \n 1 Cadena\n 2 Dije\n 3 Anillo\n 4 Aros ")
+
+//    \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros y Abridores
 
 if (productoCompra.toLowerCase() == "1") {
     let cantidadProductoCadena = prompt("Ingrese que cantidad de" + " " + productoCadena.nombre + " " + "desea comprar")
@@ -103,5 +116,3 @@ if (precioTotal != 0) {
 else {
     alert("Gracias por su visita")
 }
-
-
