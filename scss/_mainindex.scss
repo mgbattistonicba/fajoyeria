@@ -10,7 +10,7 @@ h1 {
     color: black;
     flex-direction: row;
     text-align: center;
-    font-size: 1.2cm;
+    font-size: 1.7cm;
     animation-duration: 4s;
     animation-name: titulo;
 }
@@ -41,9 +41,8 @@ h1 {
         .imgmain1 {
 
             img {
-                width: 85%;
+                width: 100%;
                 height: 85%;
-                padding: 3%;
                 border-radius: 10%;
             }
         }
@@ -62,37 +61,13 @@ h1 {
             }
         }
 
-        a {
+        .prod.p {
             color: rgb(0, 1, 7);
             text-decoration: none;
             justify-content: center;
             align-items: center;
         }
 
-        .accesoAnillos {
-            display: flex;
-            justify-content: center;
-            font-size: 0.7cm;
-
-        }
-
-        .accesoCadenas {
-            display: flex;
-            justify-content: center;
-            font-size: 0.7cm;
-        }
-
-        .accesoAros {
-            display: flex;
-            justify-content: center;
-            font-size: 0.7cm;
-        }
-
-        .accesoDijes {
-            display: flex;
-            justify-content: center;
-            font-size: 0.7cm;
-        }
     }
 
 }

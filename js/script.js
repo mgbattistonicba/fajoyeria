@@ -1,33 +1,30 @@
 // este es el archivo JS
 
 
-function producto(nombre, precio, stock){
+function producto(nombre, precio, stock, img) {
     this.nombre = nombre;
     this.precio = precio;
     this.stock = stock || 0;
-    this.restarstock = function(cantidad){
+    this.img = img
+    this.restarstock = function (cantidad) {
         this.stock -= cantidad
     }
 }
 
-let productoCadena = new producto("cadena", 2000, 200)
-let productoDije = new producto("dije", 3000, 180)
-let productoAnillo = new producto("anillo", 4000, 290)
-let productoArosyAbridores = new producto("aros y abridores", 1000, 175)
+let productoCadena = new producto("cadena", 2000, 200, "../img/cadenas/")
+let productoDije = new producto("dije", 3000, 180, "../img/dijes/")
+let productoAnillo = new producto("anillo", 4000, 290, "../img/anillos/")
+let productoAros = new producto("aros", 1000, 175, "../img/aros/")
 
 
-let listaProductos = [productoCadena, productoDije, productoAnillo, productoArosyAbridores]
+let listaProductos = [productoCadena, productoDije, productoAnillo, productoAros]
 
-let listaNombres = []
+let listaProductosConStock = listaProductos.filter((prod) => prod.stock > 0)
 
-for(const prod of listaProductos){
-    if(prod.stock >= 0){
-    listaNombres.push(prod.nombre)
-    }
-}
+let listaNombres = listaProductosConStock.map((prod) => prod.nombre)
 
 
-for(const propiedad in productoCadena){
+/* for(const propiedad in productoCadena){
 
     console.log(productoCadena[propiedad])
 }
@@ -42,16 +39,37 @@ for(const propiedad2 in productoAnillo){
     console.log(productoAnillo[propiedad2])
 }
 
-for(const propiedad3 in productoArosyAbridores){
+for(const propiedad3 in productoAros){
 
-    console.log(productoArosyAbridores[propiedad3])
+    console.log(productoAros[propiedad3])
+}
+ */
+
+function render(listaPorduct) {
+
+    for (const prod of listaPorduct) {
+
+        catalogo.innerHTML = ""
+
+        let precioTotal = 0
+
+        let catalogo = document.getElementsByClassName("row")
+
+        let card = document.createElement("listadoProducto")
+
+        card.className = "listadoProducto"
+
+        card.innerHTML = `<button href="${prod.img}">${prod.nombre}</button> <p>$${prod.precio}</p>`
+
+        catalogo.append(card)
+    }
 }
 
 
-let precioTotal = 0
+//catalogo[0].className = "rowCategoria"
 
-// función para saca el precio total y verifica si corresponde descuento 
-function precioTotalFuncion(cantidad, precio){
+// función para saca el precio total y verifica si corresponde descuento
+/* function precioTotalFuncion(cantidad, precio){
 
     precioTotal += (cantidad * precio)
 
@@ -67,10 +85,10 @@ function noStock(cantidad, _stock, precio) {
     }
 
     //alert("Actualmente tenemos " + stock + " unidades disponibles de este producto")
-}
+} */
 
 //Mensaje de bienvenida
-alert("Bienvenido a su joyeria de confianza")
+/* alert("Bienvenido a su joyeria de confianza")
 
 let cantidadCompra = parseInt(prompt("Que cantidad de productos distintos quiere comprar:"))
 
@@ -78,7 +96,7 @@ for(let i = 0; i < cantidadCompra; i = i + 1){
 
     let productoCompra = prompt("Ingrese el producto que quiere comprar: \n 1 Cadena\n 2 Dije\n 3 Anillo\n 4 Aros ")
 
-//    \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros y Abridores
+//    \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros
 
 if (productoCompra.toLowerCase() == "1") {
     let cantidadProductoCadena = prompt("Ingrese que cantidad de" + " " + productoCadena.nombre + " " + "desea comprar")
@@ -99,9 +117,9 @@ if (productoCompra.toLowerCase() == "1") {
     }
 
     else if (productoCompra.toLowerCase() == "4") {
-        let cantidadProductoArosyAbridores = prompt("Ingrese que cantidad de" + " " + productoArosyAbridores.nombre + " " + "desea comprar")
-        noStock (cantidadProductoArosyAbridores, productoArosyAbridores.stock, productoArosyAbridores.precio)
-        productoArosyAbridores.restarstock(cantidadProductoArosyAbridores)
+        let cantidadProductoAros = prompt("Ingrese que cantidad de" + " " + productoAros.nombre + " " + "desea comprar")
+        noStock (cantidadProductoAros, productoAros.stock, productoAros.precio)
+        productoAros.restarstock(cantidadProductoAros)
     }
     else {
         alert("No tenemos ese producto a la venta")
@@ -116,3 +134,4 @@ if (precioTotal != 0) {
 else {
     alert("Gracias por su visita")
 }
+ */
