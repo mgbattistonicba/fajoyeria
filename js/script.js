@@ -7,7 +7,7 @@ function producto(nombre, precio, stock, img) {
     this.stock = stock || 0;
     this.img = img
     this.restarstock = function (cantidad) {
-        this.stock -= cantidad
+    this.stock -= cantidad
     }
 }
 
@@ -66,10 +66,25 @@ function render(listaPorduct) {
 }
 
 
+//acumula a medida que vas haciendo el click en el carrito
+let acumulador = 0
+
+function contador() {
+    acumulador += 1
+    console.log(acumulador)
+}
+
+let boton = document.getElementById("prodAnillo")
+
+boton.addEventListener("click", contador)
+
+
+let precioTotal = 0
+
 //catalogo[0].className = "rowCategoria"
 
 // función para saca el precio total y verifica si corresponde descuento
-/* function precioTotalFuncion(cantidad, precio){
+function precioTotalFuncion(cantidad, precio){
 
     precioTotal += (cantidad * precio)
 
@@ -85,10 +100,10 @@ function noStock(cantidad, _stock, precio) {
     }
 
     //alert("Actualmente tenemos " + stock + " unidades disponibles de este producto")
-} */
+}
 
 //Mensaje de bienvenida
-/* alert("Bienvenido a su joyeria de confianza")
+alert("Bienvenido a su joyeria de confianza")
 
 let cantidadCompra = parseInt(prompt("Que cantidad de productos distintos quiere comprar:"))
 
@@ -134,4 +149,3 @@ if (precioTotal != 0) {
 else {
     alert("Gracias por su visita")
 }
- */
