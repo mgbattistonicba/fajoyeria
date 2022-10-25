@@ -45,9 +45,9 @@ for(const propiedad3 in productoAros){
 }
  */
 
-function render(listaPorduct) {
+function render(listaProductos) {
 
-    for (const prod of listaPorduct) {
+    for (const prod of listaProductos) {
 
         catalogo.innerHTML = ""
 
@@ -77,6 +77,9 @@ function contador() {
 let boton = document.getElementById("prodAnillo")
 
 boton.addEventListener("click", contador)
+
+
+localStorage.setItem("Hola", "Belgrano")
 
 
 let precioTotal = 0
