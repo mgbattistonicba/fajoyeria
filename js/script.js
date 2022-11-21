@@ -24,47 +24,6 @@ let listaProductosConStock = listaProductos.filter((prod) => prod.stock > 0)
 let listaNombres = listaProductosConStock.map((prod) => prod.nombre)
 
 
-/* for(const propiedad in productoCadena){
-
-    console.log(productoCadena[propiedad])
-}
-
-for(const propiedad1 in productoDije){
-
-    console.log(productoDije[propiedad1])
-}
-
-for(const propiedad2 in productoAnillo){
-
-    console.log(productoAnillo[propiedad2])
-}
-
-for(const propiedad3 in productoAros){
-
-    console.log(productoAros[propiedad3])
-}
- */
-
-function render(listaProductos) {
-
-    for (const prod of listaProductos) {
-
-        catalogo.innerHTML = ""
-
-        let precioTotal = 0
-
-        let catalogo = document.getElementsByClassName("row")
-
-        let card = document.createElement("listadoProducto")
-
-        card.className = "listadoProducto"
-
-        card.innerHTML = `<button href="${prod.img}">${prod.nombre}</button> <p>$${prod.precio}</p>`
-
-        catalogo.append(card)
-    }
-}
-
 
 //acumula a medida que vas haciendo el click en el carrito
 let acumulador = 0
@@ -84,7 +43,6 @@ localStorage.setItem("Hola", "Belgrano")
 
 let precioTotal = 0
 
-//catalogo[0].className = "rowCategoria"
 
 // función para saca el precio total y verifica si corresponde descuento
 function precioTotalFuncion(cantidad, precio){
@@ -106,7 +64,7 @@ function noStock(cantidad, _stock, precio) {
 }
 
 //Mensaje de bienvenida
-alert("Bienvenido a su joyeria de confianza")
+/*alert("Bienvenido a su joyeria de confianza")
 
 let cantidadCompra = parseInt(prompt("Que cantidad de productos distintos quiere comprar:"))
 
@@ -114,7 +72,7 @@ for(let i = 0; i < cantidadCompra; i = i + 1){
 
     let productoCompra = prompt("Ingrese el producto que quiere comprar: \n 1 Cadena\n 2 Dije\n 3 Anillo\n 4 Aros ")
 
-//    \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros
+//    \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros*/
 
 if (productoCompra.toLowerCase() == "1") {
     let cantidadProductoCadena = prompt("Ingrese que cantidad de" + " " + productoCadena.nombre + " " + "desea comprar")
@@ -141,14 +99,158 @@ if (productoCompra.toLowerCase() == "1") {
     }
     else {
         alert("No tenemos ese producto a la venta")
-    }
-    
-}    
+    } 
 
-if (precioTotal != 0) {
+/*if (precioTotal != 0) {
     alert("El precio total de su compra es: $" + precioTotal)
 }
 
 else {
     alert("Gracias por su visita")
+}*/
+
+
+
+let carrito = [];
+const divisa = '$';
+const DOMitems = document.querySelector('#items');
+const DOMcarrito = document.querySelector('#carrito');
+const DOMtotal = document.querySelector('#total');
+const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+
+// Funciones
+
+/**
+ * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+ */
+function renderizarProductos() {
+    producto.forEach((info) => {
+        // Estructura
+        const miNodo = document.createElement('div');
+        miNodo.classList.add('card', 'col-sm-4');
+        // Body
+        const miNodoCardBody = document.createElement('div');
+        miNodoCardBody.classList.add('card-body');
+        // Titulo
+        const miNodoTitle = document.createElement('h5');
+        miNodoTitle.classList.add('card-title');
+        miNodoTitle.textContent = info.nombre;
+        // Imagen
+        const miNodoImagen = document.createElement('img');
+        miNodoImagen.classList.add('img-fluid');
+        miNodoImagen.setAttribute('src', info.imagen);
+        // Precio
+        const miNodoPrecio = document.createElement('p');
+        miNodoPrecio.classList.add('card-text');
+        miNodoPrecio.textContent = `${info.precio}${divisa}`;
+        // Boton 
+        const miNodoBoton = document.createElement('button');
+        miNodoBoton.classList.add('btn', 'btn-primary');
+        miNodoBoton.textContent = '+';
+        miNodoBoton.setAttribute('marcador', info.id);
+        miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+        // Insertamos
+        miNodoCardBody.appendChild(miNodoImagen);
+        miNodoCardBody.appendChild(miNodoTitle);
+        miNodoCardBody.appendChild(miNodoPrecio);
+        miNodoCardBody.appendChild(miNodoBoton);
+        miNodo.appendChild(miNodoCardBody);
+        DOMitems.appendChild(miNodo);
+    });
 }
+
+/**
+ * Evento para añadir un producto al carrito de la compra
+ */
+function anyadirProductoAlCarrito(evento) {
+    // Anyadimos el Nodo a nuestro carrito
+    carrito.push(evento.target.getAttribute('marcador'))
+    // Actualizamos el carrito 
+    renderizarCarrito();
+
+}
+
+/**
+ * Dibuja todos los productos guardados en el carrito
+ */
+function renderizarCarrito() {
+    // Vaciamos todo el html
+    DOMcarrito.textContent = '';
+    // Quitamos los duplicados
+    const carritoSinDuplicados = [...new Set(carrito)];
+    // Generamos los Nodos a partir de carrito
+    carritoSinDuplicados.forEach((item) => {
+        // Obtenemos el item que necesitamos de la variable base de datos
+        const miItem = baseDeDatos.filter((itemBaseDatos) => {
+            // ¿Coincide las id? Solo puede existir un caso
+            return itemBaseDatos.id === parseInt(item);
+        });
+        // Cuenta el número de veces que se repite el producto
+        const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+            // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+            return itemId === item ? total += 1 : total;
+        }, 0);
+        // Creamos el nodo del item del carrito
+        const miNodo = document.createElement('li');
+        miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+        miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+        // Boton de borrar
+        const miBoton = document.createElement('button');
+        miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+        miBoton.textContent = 'X';
+        miBoton.style.marginLeft = '1rem';
+        miBoton.dataset.item = item;
+        miBoton.addEventListener('click', borrarItemCarrito);
+        // Mezclamos nodos
+        miNodo.appendChild(miBoton);
+        DOMcarrito.appendChild(miNodo);
+    });
+    // Renderizamos el precio total en el HTML
+    DOMtotal.textContent = calcularTotal();
+}
+
+/**
+ * Evento para borrar un elemento del carrito
+ */
+function borrarItemCarrito(evento) {
+    // Obtenemos el producto ID que hay en el boton pulsado
+    const id = evento.target.dataset.item;
+    // Borramos todos los productos
+    carrito = carrito.filter((carritoId) => {
+        return carritoId !== id;
+    });
+    // volvemos a renderizar
+    renderizarCarrito();
+}
+
+/**
+ * Calcula el precio total teniendo en cuenta los productos repetidos
+ */
+function calcularTotal() {
+    // Recorremos el array del carrito 
+    return carrito.reduce((total, item) => {
+        // De cada elemento obtenemos su precio
+        const miItem = baseDeDatos.filter((itemBaseDatos) => {
+            return itemBaseDatos.id === parseInt(item);
+        });
+        // Los sumamos al total
+        return total + miItem[0].precio;
+    }, 0).toFixed(2);
+}
+
+/**
+ * Varia el carrito y vuelve a dibujarlo
+ */
+function vaciarCarrito() {
+    // Limpiamos los productos guardados
+    carrito = [];
+    // Renderizamos los cambios
+    renderizarCarrito();
+}
+
+// Eventos
+DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+
+// Inicio
+renderizarProductos();
+renderizarCarrito();
