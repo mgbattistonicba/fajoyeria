@@ -1,7 +1,8 @@
 // este es el archivo JS
 
 
-function producto(nombre, precio, stock, img) {
+function producto(id, nombre, precio, stock, img) {
+    this.id = id;
     this.nombre = nombre;
     this.precio = precio;
     this.stock = stock || 0;
@@ -11,10 +12,10 @@ function producto(nombre, precio, stock, img) {
     }
 }
 
-let productoCadena = new producto("cadena", 2000, 200, "../img/cadenas/")
-let productoDije = new producto("dije", 3000, 180, "../img/dijes/")
-let productoAnillo = new producto("anillo", 4000, 290, "../img/anillos/")
-let productoAros = new producto("aros", 1000, 175, "../img/aros/")
+let productoCadena = new producto(1, "cadena", 2000, 200, "../img/cadenas/")
+let productoDije = new producto(2, "dije", 3000, 180, "../img/dijes/")
+let productoAnillo = new producto(3, "anillo", 4000, 290, "../img/anillos/")
+let productoAros = new producto(4, "aros", 1000, 175, "../img/aros/")
 
 
 let listaProductos = [productoCadena, productoDije, productoAnillo, productoAros]
@@ -74,7 +75,7 @@ for(let i = 0; i < cantidadCompra; i = i + 1){
 
 //    \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros*/
 
-if (productoCompra.toLowerCase() == "1") {
+/*if (productoCompra.toLowerCase() == "1") {
     let cantidadProductoCadena = prompt("Ingrese que cantidad de" + " " + productoCadena.nombre + " " + "desea comprar")
     noStock(cantidadProductoCadena, productoCadena.stock, productoCadena.precio)
     productoCadena.restarstock(cantidadProductoCadena)
@@ -99,7 +100,7 @@ if (productoCompra.toLowerCase() == "1") {
     }
     else {
         alert("No tenemos ese producto a la venta")
-    } 
+    }
 
 /*if (precioTotal != 0) {
     alert("El precio total de su compra es: $" + precioTotal)
@@ -167,7 +168,6 @@ function anyadirProductoAlCarrito(evento) {
     carrito.push(evento.target.getAttribute('marcador'))
     // Actualizamos el carrito 
     renderizarCarrito();
-
 }
 
 /**
@@ -179,11 +179,11 @@ function renderizarCarrito() {
     // Quitamos los duplicados
     const carritoSinDuplicados = [...new Set(carrito)];
     // Generamos los Nodos a partir de carrito
-    carritoSinDuplicados.forEach((item) => {
+    carritoSinDuplicados.forEach((prod) => {
         // Obtenemos el item que necesitamos de la variable base de datos
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
+        const miItem = listaProductos.filter((producto) => {
             // ¿Coincide las id? Solo puede existir un caso
-            return itemBaseDatos.id === parseInt(item);
+            return producto.id === parseInt(prod);
         });
         // Cuenta el número de veces que se repite el producto
         const numeroUnidadesItem = carrito.reduce((total, itemId) => {
