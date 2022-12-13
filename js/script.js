@@ -26,92 +26,6 @@ let listaNombres = listaProductosConStock.map((prod) => prod.nombre)
 
 
 
-//acumula a medida que vas haciendo el click en el carrito
-let acumulador = 0
-
-function contador() {
-    acumulador += 1
-    console.log(acumulador)
-}
-
-let boton = document.getElementById("prodAnillo")
-
-boton.addEventListener("click", contador)
-
-
-localStorage.setItem("Hola", "Belgrano")
-
-
-let precioTotal = 0
-
-
-// función para saca el precio total y verifica si corresponde descuento
-function precioTotalFuncion(cantidad, precio){
-
-    precioTotal += (cantidad * precio)
-
-    if (precioTotal >= 15000) { precioTotal = precioTotal / 1.10; }
-
-}
-
-// funcion, verifica el stock
-function noStock(cantidad, _stock, precio) {
-
-    if(cantidad, precio){
-        precioTotalFuncion(cantidad, precio)
-    }
-
-    //alert("Actualmente tenemos " + stock + " unidades disponibles de este producto")
-}
-
-//Mensaje de bienvenida
-/*alert("Bienvenido a su joyeria de confianza")
-
-let cantidadCompra = parseInt(prompt("Que cantidad de productos distintos quiere comprar:"))
-
-for(let i = 0; i < cantidadCompra; i = i + 1){
-
-    let productoCompra = prompt("Ingrese el producto que quiere comprar: \n 1 Cadena\n 2 Dije\n 3 Anillo\n 4 Aros ")
-
-//    \n 1 - Cadena\n 2 - Dije\n 3 - Anillo\n 4 - Aros*/
-
-/*if (productoCompra.toLowerCase() == "1") {
-    let cantidadProductoCadena = prompt("Ingrese que cantidad de" + " " + productoCadena.nombre + " " + "desea comprar")
-    noStock(cantidadProductoCadena, productoCadena.stock, productoCadena.precio)
-    productoCadena.restarstock(cantidadProductoCadena)
-    }
-
-    else if (productoCompra.toLowerCase() == "2") {
-        let cantidadProductoDije = prompt("Ingrese que cantidad de" + " " + productoDije.nombre + " " + "desea comprar")
-        noStock(cantidadProductoDije, productoDije.stock, productoDije.precio)
-        productoDije.restarstock(cantidadProductoDije)
-    }
-
-    else if (productoCompra.toLowerCase() == "3") {
-        let cantidadProductoAnillo = prompt("Ingrese que cantidad de" + " " + productoAnillo.nombre + " " + "desea comprar")
-        noStock(cantidadProductoAnillo, productoAnillo.stock, productoAnillo.precio)
-        productoAnillo.restarstock(cantidadProductoAnillo)
-    }
-
-    else if (productoCompra.toLowerCase() == "4") {
-        let cantidadProductoAros = prompt("Ingrese que cantidad de" + " " + productoAros.nombre + " " + "desea comprar")
-        noStock (cantidadProductoAros, productoAros.stock, productoAros.precio)
-        productoAros.restarstock(cantidadProductoAros)
-    }
-    else {
-        alert("No tenemos ese producto a la venta")
-    }
-
-/*if (precioTotal != 0) {
-    alert("El precio total de su compra es: $" + precioTotal)
-}
-
-else {
-    alert("Gracias por su visita")
-}*/
-
-
-
 let carrito = [];
 const divisa = '$';
 const DOMitems = document.querySelector('#items');
@@ -179,16 +93,16 @@ function renderizarCarrito() {
     // Quitamos los duplicados
     const carritoSinDuplicados = [...new Set(carrito)];
     // Generamos los Nodos a partir de carrito
-    carritoSinDuplicados.forEach((prod) => {
+    carritoSinDuplicados.forEach((itemid) => {
         // Obtenemos el item que necesitamos de la variable base de datos
         const miItem = listaProductos.filter((producto) => {
             // ¿Coincide las id? Solo puede existir un caso
-            return producto.id === parseInt(prod);
+            return producto.id === parseInt(itemid);
         });
         // Cuenta el número de veces que se repite el producto
-        const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+        const numeroUnidadesItem = carrito.reduce((total, Id) => {
             // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
-            return itemId === item ? total += 1 : total;
+            return Id === itemid ? total += 1 : total;
         }, 0);
         // Creamos el nodo del item del carrito
         const miNodo = document.createElement('li');
