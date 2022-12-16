@@ -20,12 +20,6 @@ let productoAros = new producto(4, "aros", 1000, 175, "../img/aros/")
 
 let listaProductos = [productoCadena, productoDije, productoAnillo, productoAros]
 
-let listaProductosConStock = listaProductos.filter((prod) => prod.stock > 0)
-
-let listaNombres = listaProductosConStock.map((prod) => prod.nombre)
-
-
-
 let carrito = [];
 const divisa = '$';
 const DOMitems = document.querySelector('#items');
