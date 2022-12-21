@@ -76,12 +76,23 @@ function anyadirProductoAlCarrito(evento) {
     carrito.push(evento.target.getAttribute('marcador'))
     // Actualizamos el carrito 
     renderizarCarrito();
+    //Agregamos un mensaje cuando agrega producto al carrito
+    Toastify({
+        text: "Agregaste correctamente el producto al carrito!",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+      }).showToast();
 }
 
 /**
  * Dibuja todos los productos guardados en el carrito
  */
 function renderizarCarrito() {
+
+    saveCartToStorage()
+
     // Vaciamos todo el html
     DOMcarrito.textContent = '';
     // Quitamos los duplicados
@@ -129,6 +140,9 @@ function borrarItemCarrito(evento) {
     });
     // volvemos a renderizar
     renderizarCarrito();
+    Swal.fire({
+        title: 'Eliminaste correctamente el producto!',
+      })
 }
 
 /**
@@ -162,3 +176,4 @@ DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 // Inicio
 renderizarProductos();
 renderizarCarrito();
+
